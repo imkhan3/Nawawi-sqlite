@@ -27,10 +27,15 @@ db.exec(`
 
 // Insert initial data (nawawi's 40 hadiths)
 db.exec(`
-  INSERT INTO hadiths (arabic_text, english_translation) VALUES 
-  ('إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ', 'Actions are judged by intentions');
-  
-  -- Add more hadith here
+  INSERT INTO words (word, translation, root) VALUES 
+  ('إِنَّمَا', 'Indeed', 'ن م و'),
+  ('الْأَعْمَالُ', 'Actions', 'ع م ل'),
+  ('بِالنِّيَّاتِ', 'By intentions', 'ن و ي');
+
+  INSERT INTO hadith_words (hadith_id, word_id) VALUES 
+  (1, 1),  -- إِنَّمَا
+  (1, 2),  -- الْأَعْمَالُ
+  (1, 3);  -- بِالنِّيَّاتِ
 `);
 
 console.log('Database setup complete!');
