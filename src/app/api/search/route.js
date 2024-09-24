@@ -32,7 +32,7 @@ export async function GET(req) {
     SELECT arabic_text, english_translation 
     FROM hadiths 
     WHERE english_translation LIKE ?
-OR REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(arabic_text, 'َ', ''), 'ُ', ''), 'ِ', ''), 'ً', ''), 'ٌ', ''), 'ٍ', ''), 'ْ', ''), 'ّ', ''), 'إ', 'ا'), 'أ', 'ا'), 'آ', 'ا') LIKE ?
+    OR REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(arabic_text, 'َ', ''), 'ُ', ''), 'ِ', ''), 'ً', ''), 'ٌ', ''), 'ٍ', ''), 'ْ', ''), 'ّ', ''), 'إ', 'ا'), 'أ', 'ا'), 'آ', 'ا') LIKE ?
   `;
 
     // Add wildcard (%) around the query to match anything containing the query
